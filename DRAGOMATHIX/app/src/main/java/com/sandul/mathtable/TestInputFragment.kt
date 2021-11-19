@@ -13,9 +13,12 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 
 class TestInputFragment : Fragment(), View.OnClickListener, ChooseMultiplierDialogFragment.OnInputSelected {
 
+    private lateinit var mAdViewTestInput: AdView
     private lateinit var clTest: ConstraintLayout
     private lateinit var btnCalc0: ImageButton
     private lateinit var btnCalc1: ImageButton
@@ -67,7 +70,15 @@ class TestInputFragment : Fragment(), View.OnClickListener, ChooseMultiplierDial
         setBg(MainActivity.curGender)
         clickBtns()
 
+        adBannerAdvertToTestInputFrag(view)
+
         return view
+    }
+
+    private fun adBannerAdvertToTestInputFrag(v: View?) {
+        mAdViewTestInput = v!!.findViewById(R.id.adViewTestInput)
+        val adRequest = AdRequest.Builder().build()
+        mAdViewTestInput.loadAd(adRequest)
     }
 
     private fun refreshQuestion() {

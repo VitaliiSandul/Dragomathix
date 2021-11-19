@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     private lateinit var mAdView: AdView
     private var mInterstitialAd: InterstitialAd? = null
     private final var TAG = "HippodromeFragment"
-    
     private lateinit var mainPage: ConstraintLayout
     private lateinit var reset: ImageView
     private lateinit var exit: ImageView
@@ -288,12 +287,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         ft.replace(R.id.container, HippodromeFragment(), "hippodrometag")
         .addToBackStack(null)
         .commit()
-
-//        if (mInterstitialAd != null) {
-//            mInterstitialAd?.show(this)
-//        } else {
-//            Log.d("TAG", "The interstitial ad wasn't ready yet.")
-//        }
     }
 
     private fun btnTestFun() {
@@ -423,10 +416,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         Log.d("diff days", days.toString())
 
         if(days > 5 && calcProgress() > 0){
-//                if(minutes >= 3 && calcProgress() > 0){
             reduceProgress(days-5)
-//                    val min = (minutes/3).toLong()
-//                    reduceProgress(min)
             curDate = Date()
             updatePlayerSettingsFun()
             updateProgress()
@@ -434,7 +424,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
             val d = ResultDialogFragment()
             val b = Bundle()
             b.putLong("KEY4", days)
-//            b.putLong("KEY4", min)
             d.arguments = b
             d.show(getSupportFragmentManager().beginTransaction(), "")
         }
@@ -490,6 +479,4 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         supportFragmentManager.popBackStack()
     }
-
-
 }

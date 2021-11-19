@@ -136,7 +136,6 @@
             app:layout_constraintEnd_toEndOf="@+id/gl_v3_dop"
             android:background="@drawable/dragon_boy_circle"/>
 
-
         <ImageView
             android:id="@+id/language"
             android:layout_width="70dp"
@@ -376,12 +375,6 @@
             android:text="@string/games"
             android:textSize="30dp"
             android:textStyle="bold"/>
-
-
-
-
-
-
 
         <com.google.android.gms.ads.AdView
             xmlns:ads="http://schemas.android.com/apk/res-auto"

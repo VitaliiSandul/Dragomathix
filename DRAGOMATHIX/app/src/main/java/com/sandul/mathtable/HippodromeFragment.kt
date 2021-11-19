@@ -27,8 +27,6 @@ import java.util.*
 
 class HippodromeFragment : Fragment(), View.OnClickListener{
 
-
-
     private lateinit var btnVar1: ImageButton
     private lateinit var btnVar2: ImageButton
     private lateinit var btnVar3: ImageButton

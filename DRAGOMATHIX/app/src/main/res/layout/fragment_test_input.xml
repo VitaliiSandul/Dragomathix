@@ -62,7 +62,6 @@
         android:visibility="gone"
         />
 
-
     <ImageView
         android:id="@+id/window"
         android:layout_width="0dp"
@@ -81,19 +80,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/glv1_btn"
-        app:layout_constraintEnd_toEndOf="@+id/glv3_btn"
+        app:layout_constraintEnd_toStartOf="@+id/a_txt"
         app:layout_constraintTop_toTopOf="@+id/window"
         app:layout_constraintBottom_toBottomOf="@+id/window"
         android:text="0 x 0 = "
         android:textSize="55dp"
         android:textStyle="bold"
-        android:gravity="center_horizontal"/>
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="20dp"/>
 
     <TextView
         android:id="@+id/a_txt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/glv3_btn"
+        app:layout_constraintStart_toEndOf="@+id/q_txt"
         app:layout_constraintEnd_toEndOf="@+id/glv4_btn"
         app:layout_constraintTop_toTopOf="@+id/window"
         app:layout_constraintBottom_toBottomOf="@+id/window"
@@ -104,46 +104,6 @@
         android:gravity="center_horizontal"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glh1_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55"
-        />
-
-   <androidx.constraintlayout.widget.Guideline
-       android:id="@+id/glh2_btn"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:orientation="horizontal"
-       app:layout_constraintGuide_percent="0.65"
-       />
-
-   <androidx.constraintlayout.widget.Guideline
-       android:id="@+id/glh3_btn"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:orientation="horizontal"
-       app:layout_constraintGuide_percent="0.75"
-       />
-
-   <androidx.constraintlayout.widget.Guideline
-       android:id="@+id/glh4_btn"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:orientation="horizontal"
-       app:layout_constraintGuide_percent="0.85"
-       />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glh5_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.95"
-        />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glv1_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -151,21 +111,7 @@
         app:layout_constraintGuide_percent="0.05"
         />
 
-   <androidx.constraintlayout.widget.Guideline
-       android:id="@+id/glv2_btn"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:orientation="vertical"
-       app:layout_constraintGuide_percent="0.35"
-       />
 
-   <androidx.constraintlayout.widget.Guideline
-       android:id="@+id/glv3_btn"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:orientation="vertical"
-       app:layout_constraintGuide_percent="0.65"
-       />
 
    <androidx.constraintlayout.widget.Guideline
        android:id="@+id/glv4_btn"
@@ -175,271 +121,338 @@
        app:layout_constraintGuide_percent="0.95"
        />
 
-   <ImageView
-       android:layout_width="0dp"
-       android:layout_height="0dp"
-       app:layout_constraintStart_toStartOf="@+id/glv1_btn"
-       app:layout_constraintEnd_toEndOf="@+id/glv4_btn"
-       app:layout_constraintTop_toTopOf="@+id/glh1_btn"
-       app:layout_constraintBottom_toBottomOf="@+id/glh5_btn"
-       android:background="@drawable/circle_10"/>
-
-   <ImageButton
-       android:id="@+id/btn_calc_7"
-       android:layout_width="0dp"
-       android:layout_height="0dp"
-       app:layout_constraintStart_toStartOf="@+id/glv1_btn"
-       app:layout_constraintEnd_toEndOf="@+id/glv2_btn"
-       app:layout_constraintTop_toTopOf="@+id/glh1_btn"
-       app:layout_constraintBottom_toBottomOf="@+id/glh2_btn"
-       android:background="@drawable/btn_calc"/>
-
-    <TextView
-        android:id="@+id/calc_7_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/btn_calc_7"
-        app:layout_constraintEnd_toEndOf="@+id/btn_calc_7"
-        app:layout_constraintTop_toTopOf="@+id/btn_calc_7"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_calc_7"
-        android:text="7"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
 
 
-    <ImageButton
-        android:id="@+id/btn_calc_4"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="@+id/glv1_btn"
-        app:layout_constraintEnd_toEndOf="@+id/glv2_btn"
-        app:layout_constraintTop_toTopOf="@+id/glh2_btn"
-        app:layout_constraintBottom_toBottomOf="@+id/glh3_btn"
-        android:background="@drawable/btn_calc"/>
-
-    <TextView
-        android:id="@+id/calc_4_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/btn_calc_4"
-        app:layout_constraintEnd_toEndOf="@+id/btn_calc_4"
-        app:layout_constraintTop_toTopOf="@+id/btn_calc_4"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_calc_4"
-        android:text="4"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
-
-    <ImageButton
-        android:id="@+id/btn_calc_1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="@+id/glv1_btn"
-        app:layout_constraintEnd_toEndOf="@+id/glv2_btn"
-        app:layout_constraintTop_toTopOf="@+id/glh3_btn"
-        app:layout_constraintBottom_toBottomOf="@+id/glh4_btn"
-        android:background="@drawable/btn_calc"/>
-
-    <TextView
-        android:id="@+id/calc_1_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/btn_calc_1"
-        app:layout_constraintEnd_toEndOf="@+id/btn_calc_1"
-        app:layout_constraintTop_toTopOf="@+id/btn_calc_1"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_calc_1"
-        android:text="1"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
-
-    <ImageButton
-        android:id="@+id/btn_delete"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="@+id/glv1_btn"
-        app:layout_constraintEnd_toEndOf="@+id/glv2_btn"
-        app:layout_constraintTop_toTopOf="@+id/glh4_btn"
-        app:layout_constraintBottom_toBottomOf="@+id/glh5_btn"
-        android:background="@drawable/btn_delete"
-        android:src="@drawable/btn_backspace"/>
-
-    <ImageButton
-        android:id="@+id/btn_calc_8"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="@+id/glv2_btn"
-        app:layout_constraintEnd_toEndOf="@+id/glv3_btn"
-        app:layout_constraintTop_toTopOf="@+id/glh1_btn"
-        app:layout_constraintBottom_toBottomOf="@+id/glh2_btn"
-        android:background="@drawable/btn_calc"/>
-
-    <TextView
-        android:id="@+id/calc_8_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/btn_calc_8"
-        app:layout_constraintEnd_toEndOf="@+id/btn_calc_8"
-        app:layout_constraintTop_toTopOf="@+id/btn_calc_8"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_calc_8"
-        android:text="8"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
-
-    <ImageButton
-        android:id="@+id/btn_calc_5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="@+id/glv2_btn"
-        app:layout_constraintEnd_toEndOf="@+id/glv3_btn"
-        app:layout_constraintTop_toTopOf="@+id/glh2_btn"
-        app:layout_constraintBottom_toBottomOf="@+id/glh3_btn"
-        android:background="@drawable/btn_calc"/>
-
-    <TextView
-        android:id="@+id/calc_5_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/btn_calc_5"
-        app:layout_constraintEnd_toEndOf="@+id/btn_calc_5"
-        app:layout_constraintTop_toTopOf="@+id/btn_calc_5"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_calc_5"
-        android:text="5"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
-
-    <ImageButton
-        android:id="@+id/btn_calc_2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="@+id/glv2_btn"
-        app:layout_constraintEnd_toEndOf="@+id/glv3_btn"
-        app:layout_constraintTop_toTopOf="@+id/glh3_btn"
-        app:layout_constraintBottom_toBottomOf="@+id/glh4_btn"
-        android:background="@drawable/btn_calc"/>
-
-    <TextView
-        android:id="@+id/calc_2_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/btn_calc_2"
-        app:layout_constraintEnd_toEndOf="@+id/btn_calc_2"
-        app:layout_constraintTop_toTopOf="@+id/btn_calc_2"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_calc_2"
-        android:text="2"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
-
-
-    <ImageButton
-        android:id="@+id/btn_calc_0"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/btn_calc"
-        app:layout_constraintBottom_toBottomOf="@+id/glh5_btn"
-        app:layout_constraintEnd_toEndOf="@+id/glv3_btn"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/glv2_btn"
-        app:layout_constraintTop_toTopOf="@+id/glh4_btn"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/calc_0_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/btn_calc_0"
-        app:layout_constraintEnd_toEndOf="@+id/btn_calc_0"
-        app:layout_constraintTop_toTopOf="@+id/btn_calc_0"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_calc_0"
-        android:text="0"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
-
-    <ImageButton
-        android:id="@+id/btn_calc_9"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="@+id/glv3_btn"
         app:layout_constraintEnd_toEndOf="@+id/glv4_btn"
-        app:layout_constraintTop_toTopOf="@+id/glh1_btn"
-        app:layout_constraintBottom_toBottomOf="@+id/glh2_btn"
-        android:background="@drawable/btn_calc"/>
+        app:layout_constraintTop_toTopOf="@+id/glh_center"
+        app:layout_constraintBottom_toTopOf="@+id/adViewTestInput"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp">
 
-    <TextView
-        android:id="@+id/calc_9_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/btn_calc_9"
-        app:layout_constraintEnd_toEndOf="@+id/btn_calc_9"
-        app:layout_constraintTop_toTopOf="@+id/btn_calc_9"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_calc_9"
-        android:text="9"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glh1_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0"
+            />
 
-    <ImageButton
-        android:id="@+id/btn_calc_6"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="@+id/glv3_btn"
-        app:layout_constraintEnd_toEndOf="@+id/glv4_btn"
-        app:layout_constraintTop_toTopOf="@+id/glh2_btn"
-        app:layout_constraintBottom_toBottomOf="@+id/glh3_btn"
-        android:background="@drawable/btn_calc"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glh2_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25"
+            />
 
-    <TextView
-        android:id="@+id/calc_6_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/btn_calc_6"
-        app:layout_constraintEnd_toEndOf="@+id/btn_calc_6"
-        app:layout_constraintTop_toTopOf="@+id/btn_calc_6"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_calc_6"
-        android:text="6"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glh3_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"
+            />
 
-    <ImageButton
-        android:id="@+id/btn_calc_3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="@+id/glv3_btn"
-        app:layout_constraintEnd_toEndOf="@+id/glv4_btn"
-        app:layout_constraintTop_toTopOf="@+id/glh3_btn"
-        app:layout_constraintBottom_toBottomOf="@+id/glh4_btn"
-        android:background="@drawable/btn_calc"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glh4_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.75"
+            />
 
-    <TextView
-        android:id="@+id/calc_3_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/btn_calc_3"
-        app:layout_constraintEnd_toEndOf="@+id/btn_calc_3"
-        app:layout_constraintTop_toTopOf="@+id/btn_calc_3"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_calc_3"
-        android:text="3"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glh5_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1.0"
+            />
 
-    <ImageButton
-        android:id="@+id/btn_accept"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="@+id/glv3_btn"
-        app:layout_constraintEnd_toEndOf="@+id/glv4_btn"
-        app:layout_constraintTop_toTopOf="@+id/glh4_btn"
-        app:layout_constraintBottom_toBottomOf="@+id/glh5_btn"
-        android:background="@drawable/btn_accept"
-        android:src="@drawable/btn_done"
-        />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glv2_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glv3_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.66"
+            />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/circle_10"/>
+
+        <ImageButton
+            android:id="@+id/btn_calc_7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/glv2_btn"
+            app:layout_constraintTop_toTopOf="@+id/glh1_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/glh2_btn"
+            android:background="@drawable/btn_calc"/>
+
+        <TextView
+            android:id="@+id/calc_7_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/btn_calc_7"
+            app:layout_constraintEnd_toEndOf="@+id/btn_calc_7"
+            app:layout_constraintTop_toTopOf="@+id/btn_calc_7"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_calc_7"
+            android:text="7"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+
+        <ImageButton
+            android:id="@+id/btn_calc_4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/glv2_btn"
+            app:layout_constraintTop_toTopOf="@+id/glh2_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/glh3_btn"
+            android:background="@drawable/btn_calc"/>
+
+        <TextView
+            android:id="@+id/calc_4_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/btn_calc_4"
+            app:layout_constraintEnd_toEndOf="@+id/btn_calc_4"
+            app:layout_constraintTop_toTopOf="@+id/btn_calc_4"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_calc_4"
+            android:text="4"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <ImageButton
+            android:id="@+id/btn_calc_1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/glv2_btn"
+            app:layout_constraintTop_toTopOf="@+id/glh3_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/glh4_btn"
+            android:background="@drawable/btn_calc"/>
+
+        <TextView
+            android:id="@+id/calc_1_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/btn_calc_1"
+            app:layout_constraintEnd_toEndOf="@+id/btn_calc_1"
+            app:layout_constraintTop_toTopOf="@+id/btn_calc_1"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_calc_1"
+            android:text="1"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <ImageButton
+            android:id="@+id/btn_delete"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/glv2_btn"
+            app:layout_constraintTop_toTopOf="@+id/glh4_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/glh5_btn"
+            android:background="@drawable/btn_delete"
+            android:src="@drawable/btn_backspace"/>
+
+        <ImageButton
+            android:id="@+id/btn_calc_8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@+id/glv2_btn"
+            app:layout_constraintEnd_toEndOf="@+id/glv3_btn"
+            app:layout_constraintTop_toTopOf="@+id/glh1_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/glh2_btn"
+            android:background="@drawable/btn_calc"/>
+
+        <TextView
+            android:id="@+id/calc_8_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/btn_calc_8"
+            app:layout_constraintEnd_toEndOf="@+id/btn_calc_8"
+            app:layout_constraintTop_toTopOf="@+id/btn_calc_8"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_calc_8"
+            android:text="8"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <ImageButton
+            android:id="@+id/btn_calc_5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@+id/glv2_btn"
+            app:layout_constraintEnd_toEndOf="@+id/glv3_btn"
+            app:layout_constraintTop_toTopOf="@+id/glh2_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/glh3_btn"
+            android:background="@drawable/btn_calc"/>
+
+        <TextView
+            android:id="@+id/calc_5_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/btn_calc_5"
+            app:layout_constraintEnd_toEndOf="@+id/btn_calc_5"
+            app:layout_constraintTop_toTopOf="@+id/btn_calc_5"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_calc_5"
+            android:text="5"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <ImageButton
+            android:id="@+id/btn_calc_2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@+id/glv2_btn"
+            app:layout_constraintEnd_toEndOf="@+id/glv3_btn"
+            app:layout_constraintTop_toTopOf="@+id/glh3_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/glh4_btn"
+            android:background="@drawable/btn_calc"/>
+
+        <TextView
+            android:id="@+id/calc_2_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/btn_calc_2"
+            app:layout_constraintEnd_toEndOf="@+id/btn_calc_2"
+            app:layout_constraintTop_toTopOf="@+id/btn_calc_2"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_calc_2"
+            android:text="2"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+
+        <ImageButton
+            android:id="@+id/btn_calc_0"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/btn_calc"
+            app:layout_constraintBottom_toBottomOf="@+id/glh5_btn"
+            app:layout_constraintEnd_toEndOf="@+id/glv3_btn"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/glv2_btn"
+            app:layout_constraintTop_toTopOf="@+id/glh4_btn"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/calc_0_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/btn_calc_0"
+            app:layout_constraintEnd_toEndOf="@+id/btn_calc_0"
+            app:layout_constraintTop_toTopOf="@+id/btn_calc_0"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_calc_0"
+            android:text="0"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <ImageButton
+            android:id="@+id/btn_calc_9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@+id/glv3_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/glh1_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/glh2_btn"
+            android:background="@drawable/btn_calc"/>
+
+        <TextView
+            android:id="@+id/calc_9_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/btn_calc_9"
+            app:layout_constraintEnd_toEndOf="@+id/btn_calc_9"
+            app:layout_constraintTop_toTopOf="@+id/btn_calc_9"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_calc_9"
+            android:text="9"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <ImageButton
+            android:id="@+id/btn_calc_6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@+id/glv3_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/glh2_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/glh3_btn"
+            android:background="@drawable/btn_calc"/>
+
+        <TextView
+            android:id="@+id/calc_6_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/btn_calc_6"
+            app:layout_constraintEnd_toEndOf="@+id/btn_calc_6"
+            app:layout_constraintTop_toTopOf="@+id/btn_calc_6"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_calc_6"
+            android:text="6"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <ImageButton
+            android:id="@+id/btn_calc_3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@+id/glv3_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/glh3_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/glh4_btn"
+            android:background="@drawable/btn_calc"/>
+
+        <TextView
+            android:id="@+id/calc_3_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/btn_calc_3"
+            app:layout_constraintEnd_toEndOf="@+id/btn_calc_3"
+            app:layout_constraintTop_toTopOf="@+id/btn_calc_3"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_calc_3"
+            android:text="3"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <ImageButton
+            android:id="@+id/btn_accept"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@+id/glv3_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/glh4_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/glh5_btn"
+            android:background="@drawable/btn_accept"
+            android:src="@drawable/btn_done"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <ImageButton
@@ -484,5 +497,19 @@
         android:textColor="@color/white"
         android:gravity="center_horizontal"
         />
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adViewTestInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-5977337362697128/1057123385">
+    </com.google.android.gms.ads.AdView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

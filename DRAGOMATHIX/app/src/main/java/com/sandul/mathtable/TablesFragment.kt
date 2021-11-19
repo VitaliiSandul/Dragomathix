@@ -12,12 +12,14 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 
 class TablesFragment : Fragment(), View.OnClickListener{
 
+    private lateinit var mAdViewTable: AdView
     private lateinit var clTables: ConstraintLayout
     private lateinit var clMain: ConstraintLayout
-//    private lateinit var llMain: LinearLayout
     private lateinit var buttons: Array<ImageButton>
     private var result1: TextView? = null
     private var result2: TextView? = null
@@ -26,6 +28,7 @@ class TablesFragment : Fragment(), View.OnClickListener{
     private lateinit var backButton1: ImageButton
     private var isShow: Boolean = true
     private var curIndex: Int = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,7 +60,15 @@ class TablesFragment : Fragment(), View.OnClickListener{
             }
             fillTableFragment(curIndex)
         }
+
+        adBannerAdvertToTablesFrag(v)
         return v
+    }
+
+    private fun adBannerAdvertToTablesFrag(v: View?) {
+        mAdViewTable = v!!.findViewById(R.id.adViewTable)
+        val adRequest = AdRequest.Builder().build()
+        mAdViewTable.loadAd(adRequest)
     }
 
     private fun setBg(gender: String) {
@@ -72,7 +83,6 @@ class TablesFragment : Fragment(), View.OnClickListener{
     private fun initElems(v: View?) {
         clTables = v?.findViewById(R.id.cl_tables)!!
         clMain = v?.findViewById(R.id.clmain)!!
-//        llMain = v?.findViewById(R.id.llmain)!!
         result1 = v?.findViewById(R.id.wtext1)
         result2 = v?.findViewById(R.id.wtext2)
         switchButton = v?.findViewById(R.id.switch_button)!!
@@ -151,9 +161,6 @@ class TablesFragment : Fragment(), View.OnClickListener{
 
         result1!!.text = builder1
         result2!!.text = builder2
-
-
-//        llMain.setGravity(Gravity.CENTER)
     }
 
     private fun paintButtons(index: Int) {

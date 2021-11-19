@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DRAGOMATHIX</string>
+    <string name="app_name">Dragomathix</string>
 
     <string name="tables">Tables</string>
     <string name="lessons">Lessons</string>
@@ -75,5 +75,4 @@
     <string name="off">Off</string>
 
     <string name="multiplier">Multiplier:</string>
-
 </resources>

@@ -75,7 +75,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/hline_1"
         android:background="@drawable/horse_boy"/>
 
-
     <ImageView
         android:id="@+id/pc"
         android:layout_width="90dp"
@@ -83,7 +82,6 @@
         app:layout_constraintStart_toStartOf="@id/vline_1"
         app:layout_constraintBottom_toBottomOf="@+id/hline_2"
         android:background="@drawable/horse_pc"/>
-
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/hline_3"
