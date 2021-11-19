@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">DRAGOMATHIX</string>
+
+    <string name="tables">Tables</string>
+    <string name="lessons">Lessons</string>
+    <string name="test">Test</string>
+    <string name="games">Games</string>
+    <string name="correct_answer">Correct answer</string>
+    <string name="incorrect_answer">Incorrect answer</string>
+    <string name="your_result">Your result: </string>
+    <string name="choose_multiplier">Choose a multiplier: </string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancel</string>
+    <string name="repeat">Repeat</string>
+    <string name="finish">Finish</string>
+    <string name="you_didnt_train">You didn\'t train</string>
+    <string name="your_progress_has_decreased">Your progress has decreased.</string>
+    <string name="days">days</string>
+
+    <string name="title2">How many wheels in bicycles?</string>
+    <string name="title3">How many towers in the castles?</string>
+    <string name="title4">How many feet in cows?</string>
+    <string name="title5">How many fingers on hands?</string>
+    <string name="title6">How many feet in beetles?</string>
+    <string name="title7">How many notes on the sheets?</string>
+    <string name="title8">How many tentacles do octopuses have?</string>
+    <string name="title9">How many pencils in boxes?</string>
+    <string name="title10">How many apples are on the trees?</string>
+
+    <string name="txt12">How many wheels in 1 bicycle: </string>
+    <string name="txt13">How many towers in 1 castle: </string>
+    <string name="txt14">How many feet in 1 cow: </string>
+    <string name="txt15">How many fingers on 1 hand: </string>
+    <string name="txt16">How many feet in 1 beetle: </string>
+    <string name="txt17">How many notes on 1 sheet: </string>
+    <string name="txt18">How many tentacles do 1 octopus have: </string>
+    <string name="txt19">How many pencils in 1 box: </string>
+    <string name="txt110">How many apples are on 1 tree: </string>
+
+    <string name="txt22">How many bicycles: </string>
+    <string name="txt23">How many castles: </string>
+    <string name="txt24">How many cows: </string>
+    <string name="txt25">How many hands: </string>
+    <string name="txt26">How many beetles: </string>
+    <string name="txt27">How many sheets: </string>
+    <string name="txt28">How many octopuses: </string>
+    <string name="txt29">How many boxes: </string>
+    <string name="txt210">How many trees: </string>
+
+    <string name="thus_the_number">Thus, the number </string>
+    <string name="should_be_taken"> should be taken </string>
+
+    <string name="time1"> time </string>
+    <string name="time2"> times </string>
+    <string name="time3"> times </string>
+    <string name="time4"> times </string>
+    <string name="time5"> times </string>
+    <string name="time6"> times </string>
+    <string name="time7"> times </string>
+    <string name="time8"> times </string>
+    <string name="time9"> times </string>
+    <string name="time10"> times </string>
+
+    <string name="you_win"> You win!!! </string>
+    <string name="you_lose"> You lose. </string>
+    <string name="draw_in_the_race">Draw in the race.</string>
+    <string name="do_you_want_to_reset_your_progress">Do you want to reset your progress?</string>
+    <string name="do_you_want_exit">Do you want to exit?</string>
+
+    <string name="player">Player</string>
+    <string name="pc">PC</string>
+
+    <string name="on">On</string>
+    <string name="off">Off</string>
+
+    <string name="multiplier">Multiplier:</string>
+
+</resources>

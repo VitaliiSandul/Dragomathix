@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">ДРАГОМАТИКА</string>
+
+    <string name="tables">Таблицы</string>
+    <string name="lessons">Уроки</string>
+    <string name="test">Тестирование</string>
+    <string name="games">Игры</string>
+    <string name="correct_answer">Правильный ответ</string>
+    <string name="incorrect_answer">Неправильный ответ</string>
+    <string name="your_result">Ваш результат: </string>
+    <string name="choose_multiplier">Выберите  множитель: </string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="cancel">Отмена</string>
+    <string name="repeat">Повторить</string>
+    <string name="finish">Окончить</string>
+    <string name="you_didnt_train">Вы не тренировались </string>
+    <string name="your_progress_has_decreased">Ваш прогрес уменьшился.</string>
+    <string name="days">дней</string>
+
+    <string name="title2">Сколько колес у велосипедов?</string>
+    <string name="title3">Сколько башен в замках?</string>
+    <string name="title4">Сколько ног у коров?</string>
+    <string name="title5">Сколько пальцев на руках?</string>
+    <string name="title6">Сколько ног у жуков?</string>
+    <string name="title7">Сколько нот на листах?</string>
+    <string name="title8">Сколько щупалец у осьминогов?</string>
+    <string name="title9">Сколько карандашей в коробках?</string>
+    <string name="title10">Сколько яблок на деревьях?</string>
+
+    <string name="txt12">Сколько колес в 1 велосипеде: </string>
+    <string name="txt13">Сколько башен в 1 замке: </string>
+    <string name="txt14">Сколько ног у 1 коровы: </string>
+    <string name="txt15">Сколько пальцев на 1 руке: </string>
+    <string name="txt16">Сколько ног у 1 жука: </string>
+    <string name="txt17">Сколько нот на 1 листе: </string>
+    <string name="txt18">Сколько щупалец у 1 осьминога: </string>
+    <string name="txt19">Сколько карандашей в 1 коробке: </string>
+    <string name="txt110">Сколько яблок на 1 дереве: </string>
+
+
+    <string name="txt22">Сколько велосипедов: </string>
+    <string name="txt23">Сколько замков: </string>
+    <string name="txt24">Сколько коров: </string>
+    <string name="txt25">Сколько рук: </string>
+    <string name="txt26">Сколько жуков: </string>
+    <string name="txt27">Сколько листов: </string>
+    <string name="txt28">Сколько осьминогов: </string>
+    <string name="txt29">Сколько коробок: </string>
+    <string name="txt210">Сколько деревьев: </string>
+
+
+    <string name="thus_the_number">Таким образом, цифру </string>
+    <string name="should_be_taken"> нужно брать </string>
+
+    <string name="time1"> раз </string>
+    <string name="time2"> раза </string>
+    <string name="time3"> раза </string>
+    <string name="time4"> раза </string>
+    <string name="time5"> раз </string>
+    <string name="time6"> раз </string>
+    <string name="time7"> раз </string>
+    <string name="time8"> раз </string>
+    <string name="time9"> раз </string>
+    <string name="time10"> раз </string>
+
+    <string name="you_win"> Победа!!! </string>
+    <string name="you_lose"> Проиграш. </string>
+    <string name="draw_in_the_race">Ничья в забеге.</string>
+    <string name="do_you_want_to_reset_your_progress">Вы хотите обнулить ваш прогресс?</string>
+    <string name="do_you_want_exit">Вы хотите выйти?</string>
+
+    <string name="player">Игрок</string>
+    <string name="pc">ПК</string>
+
+    <string name="on">Вкл</string>
+    <string name="off">Выкл</string>
+
+    <string name="multiplier">Множитель:</string>
+
+</resources>
