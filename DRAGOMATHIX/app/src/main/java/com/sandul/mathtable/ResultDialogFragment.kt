@@ -12,7 +12,6 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentTransaction
-import org.jetbrains.anko.doAsync
 
 class ResultDialogFragment : DialogFragment(){
 
@@ -53,7 +52,6 @@ class ResultDialogFragment : DialogFragment(){
                 startActivity(intent)
                 dismiss()
             }
-
         }
         else if(arg?.get("KEY2") != null){
             msgTxt.textSize = 35f
@@ -104,10 +102,9 @@ class ResultDialogFragment : DialogFragment(){
                 dismiss()
             }
             positiveBtn.setOnClickListener {
-                doAsync {
-                    MainActivity.curProgress = listOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-                    MainActivity.instance.updatePlayerSettingsFun()
-                }
+
+                MainActivity.curProgress = listOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+                MainActivity.instance.updatePlayerSettingsFun()
 
                 val intent = Intent(context, MainActivity::class.java)
                 startActivity(intent)

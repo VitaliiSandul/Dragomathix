@@ -14,7 +14,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.DialogFragment
 import java.util.*
 
-
 class ChooseMultiplierDialogFragment(val a: Int, val b: Int) : DialogFragment() {
 
     interface OnInputSelected {
@@ -29,7 +28,7 @@ class ChooseMultiplierDialogFragment(val a: Int, val b: Int) : DialogFragment() 
     private lateinit var acceptBtn: Button
     var mOnInputSelected: OnInputSelected? = null
 
-    private var level = 0
+    private var level = 1
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -55,7 +54,7 @@ class ChooseMultiplierDialogFragment(val a: Int, val b: Int) : DialogFragment() 
         rg1.setOnCheckedChangeListener(listener)
         rg2.setOnCheckedChangeListener(listener)
         cancelBtn.setOnClickListener {
-            mOnInputSelected?.sendLevel(0)
+            mOnInputSelected?.sendLevel(1)
             dismiss()
         }
         acceptBtn.setOnClickListener {
@@ -107,7 +106,7 @@ class ChooseMultiplierDialogFragment(val a: Int, val b: Int) : DialogFragment() 
             otherGroup.clearCheck()
             otherGroup.setOnCheckedChangeListener(this)
 
-            level = checkedId
+            level = checkedId+1
             Log.d("---level---", level.toString())
         }
     }

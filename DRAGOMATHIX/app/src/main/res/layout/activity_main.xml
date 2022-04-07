@@ -134,6 +134,7 @@
             app:layout_constraintBottom_toTopOf="@+id/progressbar_main"
             app:layout_constraintStart_toStartOf="@+id/gl_v2_dop"
             app:layout_constraintEnd_toEndOf="@+id/gl_v3_dop"
+            android:paddingBottom="2dp"
             android:background="@drawable/dragon_boy_circle"/>
 
         <ImageView

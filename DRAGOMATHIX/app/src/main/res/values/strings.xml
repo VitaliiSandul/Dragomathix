@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Dragomathix</string>
-
     <string name="tables">Tables</string>
     <string name="lessons">Lessons</string>
     <string name="test">Test</string>
@@ -18,26 +17,29 @@
     <string name="your_progress_has_decreased">Your progress has decreased.</string>
     <string name="days">days</string>
 
-    <string name="title2">How many wheels in bicycles?</string>
-    <string name="title3">How many towers in the castles?</string>
-    <string name="title4">How many feet in cows?</string>
-    <string name="title5">How many fingers on hands?</string>
-    <string name="title6">How many feet in beetles?</string>
-    <string name="title7">How many notes on the sheets?</string>
+    <string name="title1">How many trunks elephants have?</string>
+    <string name="title2">How many wheels are in the bicycles?</string>
+    <string name="title3">How many towers are in the castles?</string>
+    <string name="title4">How many feet do cows have?</string>
+    <string name="title5">How many fingers are on the hands?</string>
+    <string name="title6">How many feet do beetles have?</string>
+    <string name="title7">How many notes are on the sheets?</string>
     <string name="title8">How many tentacles do octopuses have?</string>
-    <string name="title9">How many pencils in boxes?</string>
+    <string name="title9">How many pencils are in the boxes?</string>
     <string name="title10">How many apples are on the trees?</string>
 
-    <string name="txt12">How many wheels in 1 bicycle: </string>
-    <string name="txt13">How many towers in 1 castle: </string>
-    <string name="txt14">How many feet in 1 cow: </string>
-    <string name="txt15">How many fingers on 1 hand: </string>
-    <string name="txt16">How many feet in 1 beetle: </string>
-    <string name="txt17">How many notes on 1 sheet: </string>
-    <string name="txt18">How many tentacles do 1 octopus have: </string>
-    <string name="txt19">How many pencils in 1 box: </string>
+    <string name="txt11">How many trunks does 1 elephant have: </string>
+    <string name="txt12">How many wheels are in 1 bicycle: </string>
+    <string name="txt13">How many towers are in 1 castle: </string>
+    <string name="txt14">How many feet does 1 cow have: </string>
+    <string name="txt15">How many fingers are on 1 hand: </string>
+    <string name="txt16">How many feet does 1 beetle have: </string>
+    <string name="txt17">How many notes are on 1 sheet: </string>
+    <string name="txt18">How many tentacles does 1 octopus have: </string>
+    <string name="txt19">How many pencils are in 1 box: </string>
     <string name="txt110">How many apples are on 1 tree: </string>
 
+    <string name="txt21">How many elephants: </string>
     <string name="txt22">How many bicycles: </string>
     <string name="txt23">How many castles: </string>
     <string name="txt24">How many cows: </string>

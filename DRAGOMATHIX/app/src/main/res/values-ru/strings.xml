@@ -13,11 +13,12 @@
     <string name="no">Нет</string>
     <string name="cancel">Отмена</string>
     <string name="repeat">Повторить</string>
-    <string name="finish">Окончить</string>
+    <string name="finish">Завершить</string>
     <string name="you_didnt_train">Вы не тренировались </string>
     <string name="your_progress_has_decreased">Ваш прогрес уменьшился.</string>
     <string name="days">дней</string>
 
+    <string name="title1">Сколько хоботов у слонов?</string>
     <string name="title2">Сколько колес у велосипедов?</string>
     <string name="title3">Сколько башен в замках?</string>
     <string name="title4">Сколько ног у коров?</string>
@@ -28,6 +29,7 @@
     <string name="title9">Сколько карандашей в коробках?</string>
     <string name="title10">Сколько яблок на деревьях?</string>
 
+    <string name="txt11">Сколько хоботов у 1 слона: </string>
     <string name="txt12">Сколько колес в 1 велосипеде: </string>
     <string name="txt13">Сколько башен в 1 замке: </string>
     <string name="txt14">Сколько ног у 1 коровы: </string>
@@ -38,7 +40,7 @@
     <string name="txt19">Сколько карандашей в 1 коробке: </string>
     <string name="txt110">Сколько яблок на 1 дереве: </string>
 
-
+    <string name="txt21">Сколько слонов: </string>
     <string name="txt22">Сколько велосипедов: </string>
     <string name="txt23">Сколько замков: </string>
     <string name="txt24">Сколько коров: </string>

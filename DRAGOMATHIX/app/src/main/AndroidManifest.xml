@@ -2,12 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sandul.mathtable">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
+        android:name=".PlayerSettingsApplication"
         android:hardwareAccelerated="true"
         android:allowBackup="true"
-        android:icon="@mipmap/dragon_icon"
+        android:icon="@mipmap/dragon_square_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/dragon_icon_round"
+        android:roundIcon="@mipmap/drago_circle_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <service

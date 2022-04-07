@@ -126,10 +126,10 @@ class HippodromeFragment : Fragment(), View.OnClickListener{
             playerX += delta
 
             var newList = MainActivity.curProgress.toMutableList()
-            if(newList.get(tableViewModel.currentQuestionCategory) < 100) {
+            if(newList.get(tableViewModel.currentQuestionCategory-1) < 100) {
                 newList.set(
-                        tableViewModel.currentQuestionCategory,
-                        newList.get(tableViewModel.currentQuestionCategory) + 1
+                        tableViewModel.currentQuestionCategory-1,
+                        newList.get(tableViewModel.currentQuestionCategory-1) + 1
                 )
                 MainActivity.curProgress = newList.toList()
                 MainActivity.instance.updateProgress()

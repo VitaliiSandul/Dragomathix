@@ -50,7 +50,7 @@ class TestInputFragment : Fragment(), View.OnClickListener, ChooseMultiplierDial
         super.onCreate(savedInstanceState)
         retainInstance = true
 
-        val dialog = ChooseMultiplierDialogFragment(0, 11)
+        val dialog = ChooseMultiplierDialogFragment(1, 10)
         dialog.setTargetFragment(this@TestInputFragment, 1)
         fragmentManager?.let { dialog.show(it, "ChooseMultiplierDialogFragment") }
     }
@@ -154,7 +154,7 @@ class TestInputFragment : Fragment(), View.OnClickListener, ChooseMultiplierDial
                 }
             }
             R.id.btn_accept -> {
-                if (questionCount < 12) {
+                if (questionCount < 10) {
                     unclickBtns()
                     questionCount++
 
@@ -170,10 +170,10 @@ class TestInputFragment : Fragment(), View.OnClickListener, ChooseMultiplierDial
                         correctAnswerCount++
 
                         var newList = MainActivity.curProgress.toMutableList()
-                        if (newList.get(tableViewModel.currentQuestionCategory) < 100) {
+                        if (newList.get(tableViewModel.currentQuestionCategory-1) < 100) {
                             newList.set(
-                                tableViewModel.currentQuestionCategory,
-                                newList.get(tableViewModel.currentQuestionCategory) + 1
+                                tableViewModel.currentQuestionCategory-1,
+                                newList.get(tableViewModel.currentQuestionCategory-1) + 1
                             )
                             MainActivity.curProgress = newList.toList()
                             MainActivity.instance.updateProgress()
@@ -198,12 +198,12 @@ class TestInputFragment : Fragment(), View.OnClickListener, ChooseMultiplierDial
                         handler.postDelayed({
                             toastMsg.visibility = View.GONE
 
-                            if (questionCount < 12) {
-                                txtTestQuest.text = (questionCount + 1).toString() + "/12"
+                            if (questionCount < 10) {
+                                txtTestQuest.text = (questionCount + 1).toString() + "/10"
                                 tableViewModel.moveToNext()
                                 refreshQuestion()
                             } else {
-                                var percent = correctAnswerCount * 100 / 12
+                                var percent = correctAnswerCount * 100 / 10
 
                                 val d = ResultDialogFragment()
                                 val b = Bundle()

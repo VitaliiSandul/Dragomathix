@@ -18,6 +18,7 @@
     <string name="your_progress_has_decreased">Ваш прогрес зменшився.</string>
     <string name="days">днів</string>
 
+    <string name="title1">Скільки хоботів у слонів?</string>
     <string name="title2">Скільки коліс у велосипедів?</string>
     <string name="title3">Скільки веж в замках?</string>
     <string name="title4">Скільки ніг у корів?</string>
@@ -28,9 +29,10 @@
     <string name="title9">Скільки олівців в коробках?</string>
     <string name="title10">Скільки яблук на деревах?</string>
 
+    <string name="txt11">Скільки хоботів у 1 слона: </string>
     <string name="txt12">Скільки коліс у 1 велосипеда: </string>
     <string name="txt13">Скільки веж в 1 замку: </string>
-    <string name="txt14">Скільки ніг у 1 корови?: </string>
+    <string name="txt14">Скільки ніг у 1 корови: </string>
     <string name="txt15">Скільки пальців на 1 руці: </string>
     <string name="txt16">Скільки ніг у 1 жука: </string>
     <string name="txt17">Скільки нот на 1 аркуші: </string>
@@ -38,6 +40,7 @@
     <string name="txt19">Скільки олівців в 1 коробці: </string>
     <string name="txt110">Скільки яблук на 1 дереві: </string>
 
+    <string name="txt21">Скільки слонів: </string>
     <string name="txt22">Скільки велосипедів: </string>
     <string name="txt23">Скільки замків: </string>
     <string name="txt24">Скільки корів: </string>
@@ -64,7 +67,7 @@
 
     <string name="you_win"> Перемога!!! </string>
     <string name="you_lose"> Програш. </string>
-    <string name="draw_in_the_race">Ничия в забігу.</string>
+    <string name="draw_in_the_race">Нічия в забігу.</string>
     <string name="do_you_want_to_reset_your_progress">Ви хочете обнулити ваш прогрес?</string>
     <string name="do_you_want_exit">Ви хочете вийти?</string>
 

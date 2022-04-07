@@ -49,7 +49,7 @@ class TablesFragment : Fragment(), View.OnClickListener{
         activity?.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         initElems(v)
         setBg(MainActivity.curGender)
-        fillTableFragment(0)
+        fillTableFragment(1)
         clickBtns()
 
         switchButton.setOnCheckedChangeListener { buttonView, isChecked ->
@@ -88,15 +88,14 @@ class TablesFragment : Fragment(), View.OnClickListener{
         switchButton = v?.findViewById(R.id.switch_button)!!
         backButton1 = v?.findViewById(R.id.back_button1)!!
 
-        buttons = arrayOf<ImageButton>(v!!.findViewById<ImageButton>(R.id.test_0), v.findViewById<ImageButton>(R.id.test_1), v.findViewById<ImageButton>(R.id.test_2),
+        buttons = arrayOf<ImageButton>(v!!.findViewById<ImageButton>(R.id.test_1), v.findViewById<ImageButton>(R.id.test_2),
                                         v.findViewById<ImageButton>(R.id.test_3), v.findViewById<ImageButton>(R.id.test_4), v.findViewById<ImageButton>(R.id.test_5),
                                         v.findViewById<ImageButton>(R.id.test_6), v.findViewById<ImageButton>(R.id.test_7), v.findViewById<ImageButton>(R.id.test_8),
-                                        v.findViewById<ImageButton>(R.id.test_9), v.findViewById<ImageButton>(R.id.test_10), v.findViewById<ImageButton>(R.id.test_11))
+                                        v.findViewById<ImageButton>(R.id.test_9), v.findViewById<ImageButton>(R.id.test_10))
     }
 
     override fun onClick(v: View?) {
         when (v!!.id) {
-            R.id.test_0 -> curIndex = 0
             R.id.test_1 -> curIndex = 1
             R.id.test_2 -> curIndex = 2
             R.id.test_3 -> curIndex = 3
@@ -107,7 +106,6 @@ class TablesFragment : Fragment(), View.OnClickListener{
             R.id.test_8 -> curIndex = 8
             R.id.test_9 -> curIndex = 9
             R.id.test_10 -> curIndex = 10
-            R.id.test_11 -> curIndex = 11
             R.id.back_button1 -> activity?.onBackPressed()
         }
         fillTableFragment(curIndex)
@@ -125,8 +123,8 @@ class TablesFragment : Fragment(), View.OnClickListener{
         val builder1 = SpannableStringBuilder()
         val builder2 = SpannableStringBuilder()
 
-        var i = 0
-            while (i <= 11) {
+        var i = 1
+            while (i <= 10) {
                 answer = i * index
 
                 if(i <=5) {
@@ -152,7 +150,7 @@ class TablesFragment : Fragment(), View.OnClickListener{
                         builder2.append("?")
                     }
 
-                    if(i!=11){
+                    if(i!=10){
                         builder2.append("\n\n")
                     }
                 }
@@ -166,7 +164,7 @@ class TablesFragment : Fragment(), View.OnClickListener{
     private fun paintButtons(index: Int) {
         for ((pos, btn) in buttons.withIndex()) {
 
-            if(pos == index){
+            if(pos == index - 1){
                 btn.setBackgroundResource(R.drawable.btn_accept)
             }else{
                 btn.setBackgroundResource(R.drawable.btn_calc)

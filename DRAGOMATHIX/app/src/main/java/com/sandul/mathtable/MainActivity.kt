@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.widget.ImageButton
@@ -15,18 +16,13 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.FragmentTransaction
-import androidx.room.Room
 import com.google.android.gms.ads.*
+import com.google.android.gms.ads.RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
-import com.onesignal.OneSignal
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.onComplete
 import java.util.*
-
-const val ONESIGNAL_APP_ID = "ba466cea-e856-4358-8d6a-2931519fbdb9"
 
 class MainActivity : AppCompatActivity(), View.OnClickListener{
 
@@ -52,7 +48,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     private lateinit var btnLessons: ImageButton
     private lateinit var btnTest: ImageButton
     private lateinit var btnGames: ImageButton
-    private lateinit var playerSettingsDao: PlayerSettingsDao
+    private val playerSettingsRepository = PlayerSettingsRepository.get()
 
     companion object {
         lateinit var curLanguage: String
@@ -67,35 +63,36 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "playset.db").build()
-        playerSettingsDao = db.playerSettingsDao()
-
-        doAsync {
-            if(playerSettingsDao.getAll().size == 0){
-                GlobalScope.launch {
-                    ps = PlayerSettings(0, "en", "boy", Date(), listOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0))
-                    db.playerSettingsDao().insert(ps)
-                }
-            }
-            else{
-                ps = playerSettingsDao.getAll()[0]
-            }
-
+        if(playerSettingsRepository.playerSettingsDao.getAll().size == 0){
+            curLanguage = "en"
+            curGender = "boy"
+            curDate = Date()
+            curProgress = listOf( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+        }
+        else{
+            ps = playerSettingsRepository.playerSettingsDao.getAll()[0]
             curLanguage = ps.language!!
             curGender = ps.gender!!
             curDate = ps.date!!
             curProgress = ps.progress!!
-            setLocale(curLanguage)
+        }
+        setLocale(curLanguage)
 
-            onComplete{
-                initComponents()
-                click()
-                fillElements()
-                checkDaysWithoutTraining()
+        val handler = Handler()
+        handler.post {
+            if(playerSettingsRepository.playerSettingsDao.getAll().size == 0){
+                GlobalScope.launch {
+                    ps = PlayerSettings(0, "en", "boy", Date(), listOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0))
+                    playerSettingsRepository.playerSettingsDao.insert(ps)
+                }
             }
         }
 
         setContentView(R.layout.activity_main)
+        initComponents()
+        click()
+        fillElements()
+        checkDaysWithoutTraining()
 
         val serviceClass = MusicService::class.java
         val intent = Intent(this, serviceClass)
@@ -108,16 +105,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
 
         instance = this
 
-        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE)
-        OneSignal.initWithContext(this)
-        OneSignal.setAppId(ONESIGNAL_APP_ID)
+        val conf = RequestConfiguration.Builder()
+                .setMaxAdContentRating("G")
+                .setTagForChildDirectedTreatment(TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE)
+                .build()
+        MobileAds.setRequestConfiguration(conf)
 
         MobileAds.initialize(this) {}
         mAdView = findViewById(R.id.adView)
+
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
 
-        InterstitialAd.load(this,"ca-app-pub-5977337362697128/4842301634", adRequest, object : InterstitialAdLoadCallback() {
+        InterstitialAd.load(this, "ca-app-pub-5977337362697128/4842301634", adRequest, object : InterstitialAdLoadCallback() {
             override fun onAdFailedToLoad(adError: LoadAdError) {
                 Log.d(TAG, adError?.message)
                 mInterstitialAd = null
@@ -266,20 +266,30 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
 
     private fun setLanguage(lang: String){
         curLanguage = lang
-        updatePlayerSettingsFun()
-        when (lang) {
-            "en" -> language.setBackgroundResource(R.drawable.eng_lang)
-            "uk" -> language.setBackgroundResource(R.drawable.ukr_lang)
-            "ru" -> language.setBackgroundResource(R.drawable.rus_lang)
-        }
+
+        Log.d("old language", Locale.getDefault().toString())
+        Log.d("new language", curLanguage)
 
         language.visibility = View.VISIBLE
         engLang.visibility = View.GONE
         ukrLang.visibility = View.GONE
         rusLang.visibility = View.GONE
 
-        setLocale(lang)
-        recreate()
+        if(!curLanguage.equals(Locale.getDefault().toString())){
+            Log.d("languages equals", "false")
+
+            when (lang) {
+                "en" -> language.setBackgroundResource(R.drawable.eng_lang)
+                "uk" -> language.setBackgroundResource(R.drawable.ukr_lang)
+                "ru" -> language.setBackgroundResource(R.drawable.rus_lang)
+            }
+            updatePlayerSettingsFun()
+            setLocale(lang)
+            recreate()
+        }
+        else{
+            Log.d("languages equals", "true")
+        }
     }
 
     private fun btnGamesFun() {
@@ -379,9 +389,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     }
 
     fun updatePlayerSettingsFun() {
-        doAsync {
-            playerSettingsDao.update(PlayerSettings(0, curLanguage, curGender, Date(), curProgress))
-        }
+            val handler = Handler()
+            handler.post {
+                playerSettingsRepository.playerSettingsDao.update(
+                        PlayerSettings(
+                                0,
+                                curLanguage,
+                                curGender,
+                                Date(),
+                                curProgress,
+                        )
+                )
+            }
     }
 
     private fun calcProgress(): Int {
@@ -416,7 +435,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         Log.d("diff days", days.toString())
 
         if(days > 5 && calcProgress() > 0){
-            reduceProgress(days-5)
+            reduceProgress(days - 5)
             curDate = Date()
             updatePlayerSettingsFun()
             updateProgress()

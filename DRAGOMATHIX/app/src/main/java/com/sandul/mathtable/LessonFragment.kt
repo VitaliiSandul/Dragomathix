@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.graphics.Typeface
 import android.os.Bundle
+import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -67,25 +68,25 @@ class LessonFragment : Fragment(), View.OnClickListener, ChooseMultiplierDialogF
     }
 
     override fun sendLevel(input: Int) {
-        level = input + 1
+        level = input
         setViewFlipper()
     }
 
     private fun setViewFlipper(){
-        listTitle = ArrayList(Arrays.asList<Int>(R.string.title2, R.string.title3, R.string.title4, R.string.title5, R.string.title6, R.string.title7, R.string.title8, R.string.title9, R.string.title10))
+        listTitle = ArrayList(Arrays.asList<Int>(R.string.title1, R.string.title2, R.string.title3, R.string.title4, R.string.title5, R.string.title6, R.string.title7, R.string.title8, R.string.title9, R.string.title10))
 
-        listImages = ArrayList(Arrays.asList<Int>(R.drawable.bike, R.drawable.castle, R.drawable.cow,
+        listImages = ArrayList(Arrays.asList<Int>(R.drawable.elephant, R.drawable.bike, R.drawable.castle, R.drawable.cow,
                 R.drawable.hand, R.drawable.bug, R.drawable.notes,
                 R.drawable.octopus, R.drawable.pencils, R.drawable.apples))
 
-        listTxt1 = ArrayList(Arrays.asList<Int>(R.string.txt12, R.string.txt13, R.string.txt14, R.string.txt15, R.string.txt16, R.string.txt17, R.string.txt18, R.string.txt19, R.string.txt110))
+        listTxt1 = ArrayList(Arrays.asList<Int>(R.string.txt11, R.string.txt12, R.string.txt13, R.string.txt14, R.string.txt15, R.string.txt16, R.string.txt17, R.string.txt18, R.string.txt19, R.string.txt110))
 
-        listTxt2 = ArrayList(Arrays.asList<Int>(R.string.txt22, R.string.txt23, R.string.txt24, R.string.txt25, R.string.txt26, R.string.txt27, R.string.txt28, R.string.txt29, R.string.txt210))
+        listTxt2 = ArrayList(Arrays.asList<Int>(R.string.txt21, R.string.txt22, R.string.txt23, R.string.txt24, R.string.txt25, R.string.txt26, R.string.txt27, R.string.txt28, R.string.txt29, R.string.txt210))
 
         listTimes = ArrayList(Arrays.asList<Int>(R.string.time1, R.string.time2, R.string.time3, R.string.time4, R.string.time5, R.string.time6, R.string.time7, R.string.time8, R.string.time9, R.string.time10))
 
 
-        for (i in 0..8) {
+        for (i in 0..9) {
 
             val LLV1 = LinearLayout(activity)
             val layoutParamsLLV1 = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
@@ -97,10 +98,10 @@ class LessonFragment : Fragment(), View.OnClickListener, ChooseMultiplierDialogF
             val title = TextView(activity)
             val layoutParamsTitle = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             title.setLayoutParams(layoutParamsTitle)
-            title.setText(listTitle!!.get(i))
+            title.setText(listTitle!!.get(level-1))
             title.setTextColor(0xff000000)
             title.setTypeface(title.getTypeface(), Typeface.BOLD);
-            title.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 33f)
+            title.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 30f)
             title.setGravity(Gravity.CENTER_HORIZONTAL)
             LLV1.addView(title)
 
@@ -118,13 +119,13 @@ class LessonFragment : Fragment(), View.OnClickListener, ChooseMultiplierDialogF
             LLH3.setGravity(Gravity.CENTER_HORIZONTAL)
             LLH3.orientation = LinearLayout.HORIZONTAL
 
-            for (j in 0..(level-1)) {
+            for (j in 0..i) {
                 val image = ImageView(activity)
                 val params = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
                 params.width = 100.dpToPixels(context)
                 params.height = 80.dpToPixels(context)
                 image.setLayoutParams(params)
-                image.setImageResource(listImages!!.get(i))
+                image.setImageResource(listImages!!.get(level-1))
 
                 if(j <5) {
                     LLH2.addView(image)
@@ -139,25 +140,25 @@ class LessonFragment : Fragment(), View.OnClickListener, ChooseMultiplierDialogF
 
             val extendedEquation = TextView(activity)
             val layoutParamsExtendedEquation = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-            layoutParamsExtendedEquation.setMargins(10.dpToPixels(context),20.dpToPixels(context),10.dpToPixels(context),20.dpToPixels(context))
+            layoutParamsExtendedEquation.setMargins(10.dpToPixels(context),15.dpToPixels(context),10.dpToPixels(context),15.dpToPixels(context))
             extendedEquation.setLayoutParams(layoutParamsExtendedEquation)
 
-            var str = ""+ (i+2) + " x " + level + " = "
+            var str = ""+ level + " x " + (i+1) + " = "
 
-            if(level > 1){
-                str += (i+2)
-                for (j in 0..(level-2)) {
-                    str += " + " + (i+2)
+            if (i > 0){
+                str += level
+                for (j in 1..i) {
+                    str += " + " + level
                 }
                 str += " = "
             }
 
-            str += (i+2)*level
+            str += (i+1)*level
 
             extendedEquation.setText(str)
             extendedEquation.setTextColor(0xffb7102f)
             extendedEquation.setTypeface(extendedEquation.getTypeface(), Typeface.BOLD);
-            extendedEquation.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25f)
+            extendedEquation.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20f)
             extendedEquation.setGravity(Gravity.CENTER_HORIZONTAL)
             LLV1.addView(extendedEquation)
 
@@ -171,18 +172,18 @@ class LessonFragment : Fragment(), View.OnClickListener, ChooseMultiplierDialogF
             val txt1 = TextView(activity)
             val layoutParamsTxt1 = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             txt1.setLayoutParams(layoutParamsTxt1)
-            txt1.setText(listTxt1!!.get(i))
+            txt1.setText(listTxt1!!.get(level-1))
             txt1.setTextColor(0xff000000)
-            txt1.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25f)
+            txt1.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20f)
             LLH4.addView(txt1)
 
             val multiplier1 = TextView(activity)
             val layoutParamsMultiplier1 = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             multiplier1.setLayoutParams(layoutParamsMultiplier1)
-            multiplier1.setText(" " + (i + 2).toString())
+            multiplier1.setText(" " + level.toString())
             multiplier1.setTextColor(0xffb7102f)
             multiplier1.setTypeface(title.getTypeface(), Typeface.BOLD);
-            multiplier1.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25f)
+            multiplier1.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20f)
             LLH4.addView(multiplier1)
             LLV1.addView(LLH4)
 
@@ -196,18 +197,18 @@ class LessonFragment : Fragment(), View.OnClickListener, ChooseMultiplierDialogF
             val txt2 = TextView(activity)
             val layoutParamsTxt2 = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             txt2.setLayoutParams(layoutParamsTxt2)
-            txt2.setText(listTxt2!!.get(i))
+            txt2.setText(listTxt2!!.get(level-1))
             txt2.setTextColor(0xff000000)
-            txt2.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25f)
+            txt2.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20f)
             LLH5.addView(txt2)
 
             val multiplier2 = TextView(activity)
             val layoutParamsMultiplier2 = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             multiplier2.setLayoutParams(layoutParamsMultiplier2)
-            multiplier2.setText(" " + (level).toString())
+            multiplier2.setText(" " + (i + 1).toString())
             multiplier2.setTextColor(0xffb7102f)
             multiplier2.setTypeface(title.getTypeface(), Typeface.BOLD);
-            multiplier2.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25f)
+            multiplier2.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20f)
             LLH5.addView(multiplier2)
             LLV1.addView(LLH5)
 
@@ -223,16 +224,16 @@ class LessonFragment : Fragment(), View.OnClickListener, ChooseMultiplierDialogF
             txt3.setLayoutParams(layoutParamsTxt3)
             txt3.setText(R.string.thus_the_number)
             txt3.setTextColor(0xff000000)
-            txt3.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25f)
+            txt3.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20f)
             LLH6.addView(txt3)
 
             val multiplier11 = TextView(activity)
             val layoutParamsMultiplier11 = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             multiplier11.setLayoutParams(layoutParamsMultiplier11)
-            multiplier11.setText(" " + (i + 2).toString() + " ")
+            multiplier11.setText(" " + level.toString() + " ")
             multiplier11.setTextColor(0xffb7102f)
             multiplier11.setTypeface(title.getTypeface(), Typeface.BOLD);
-            multiplier11.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25f)
+            multiplier11.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20f)
             LLH6.addView(multiplier11)
 
             val txt4 = TextView(activity)
@@ -240,24 +241,24 @@ class LessonFragment : Fragment(), View.OnClickListener, ChooseMultiplierDialogF
             txt4.setLayoutParams(layoutParamsTxt4)
             txt4.setText(R.string.should_be_taken)
             txt4.setTextColor(0xff000000)
-            txt4.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25f)
+            txt4.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20f)
             LLH6.addView(txt4)
 
             val multiplier21 = TextView(activity)
             val layoutParamsMultiplier21 = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             multiplier21.setLayoutParams(layoutParamsMultiplier21)
-            multiplier21.setText(" " + (level).toString() + " ")
+            multiplier21.setText(" " + (i + 1).toString() + " ")
             multiplier21.setTextColor(0xffb7102f)
             multiplier21.setTypeface(title.getTypeface(), Typeface.BOLD);
-            multiplier21.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25f)
+            multiplier21.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20f)
             LLH6.addView(multiplier21)
 
             val times = TextView(activity)
             val layoutParamsTimes = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             times.setLayoutParams(layoutParamsTimes)
-            times.setText(listTimes!!.get(level-1))
+            times.setText(listTimes!!.get(i))
             times.setTextColor(0xff000000)
-            times.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25f)
+            times.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20f)
             LLH6.addView(times)
 
             val txt5 = TextView(activity)
@@ -265,19 +266,19 @@ class LessonFragment : Fragment(), View.OnClickListener, ChooseMultiplierDialogF
             txt5.setLayoutParams(layoutParamsTxt5)
             txt5.setText(": ")
             txt5.setTextColor(0xff000000)
-            txt5.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25f)
+            txt5.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20f)
             LLH6.addView(txt5)
 
             val shortEquation = TextView(activity)
             val layoutParamsShortEquation = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             shortEquation.setLayoutParams(layoutParamsShortEquation)
 
-            var str1 = ""+ (i+2) + " x " + level + " = " + (i+2)*level
+            var str1 = ""+ level + " x " + (i+1) + " = " + (i+1)*level
 
             shortEquation.setText(str1)
             shortEquation.setTextColor(0xffb7102f)
             shortEquation.setTypeface(extendedEquation.getTypeface(), Typeface.BOLD);
-            shortEquation.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25f)
+            shortEquation.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20f)
             shortEquation.setGravity(Gravity.CENTER_HORIZONTAL)
             LLH6.addView(shortEquation)
 
